@@ -536,12 +536,13 @@ body {
 .media-brand {
   display: flex;
   justify-content: center;
-  padding-top: 38px;
+  padding-top: 18px;
 }
 
 .media-logo-image {
   width: min(470px, 100%);
-  height: auto;
+  height: clamp(440px, 40vw, 530px);
+  object-fit: fill;
   display: block;
 }
 
@@ -1152,6 +1153,11 @@ body {
   .media-brand {
     justify-content: start;
     padding-top: 0;
+  }
+
+  .media-logo-image {
+    height: auto;
+    object-fit: contain;
   }
 
   .media-photo {
