@@ -190,15 +190,17 @@ body {
 }
 
 .event-side {
+  position: relative;
   justify-self: end;
-  display: grid;
-  justify-items: end;
-  gap: 18px;
-  width: min(360px, 100%);
+  width: min(480px, 100%);
+  padding-top: 70px;
 }
 
 .event-side .badge-circle {
-  justify-self: end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
 }
 
 .badge-photo {
@@ -208,7 +210,7 @@ body {
 
 .badge-photo img {
   width: 100%;
-  height: 230px;
+  height: clamp(300px, 32vw, 390px);
   object-fit: cover;
   object-position: center;
   display: block;
@@ -1187,7 +1189,11 @@ body {
 
   .event-side {
     justify-self: start;
-    justify-items: start;
+  }
+
+  .event-side .badge-circle {
+    right: auto;
+    left: 0;
   }
 
   .media-hero,
