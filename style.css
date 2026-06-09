@@ -358,6 +358,7 @@ a {
   aspect-ratio: 4 / 5;
   display: block;
   object-fit: cover;
+  object-position: 68% center;
   border-radius: 8px;
   box-shadow: 0 16px 36px rgba(15, 114, 47, 0.12);
 }
