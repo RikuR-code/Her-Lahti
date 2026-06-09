@@ -53,7 +53,7 @@ a {
 }
 
 .top-nav {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1440px, calc(100% - 40px));
   min-height: 76px;
   margin: 0 auto;
   display: flex;
@@ -111,9 +111,9 @@ a {
 }
 
 .page {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 34px 0 56px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .tab-panel[hidden] {
@@ -126,9 +126,9 @@ a {
   position: relative;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(8, 119, 201, 0.13);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .media-release::before,
@@ -141,15 +141,17 @@ a {
 }
 
 .media-release {
-  padding: 0 48px 0;
+  padding: 0 clamp(24px, 5vw, 84px);
 }
 
 .media-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(280px, 0.96fr);
-  gap: 46px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(380px, 1.1fr);
+  gap: clamp(38px, 6vw, 92px);
   align-items: center;
-  padding: 52px 0 38px;
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 68px 0 48px;
 }
 
 .media-copy {
@@ -215,7 +217,7 @@ a {
 .media-brand {
   position: relative;
   align-self: stretch;
-  min-height: 360px;
+  min-height: 470px;
   display: grid;
   place-items: center;
   padding: 24px;
@@ -241,6 +243,8 @@ a {
 }
 
 .media-feature-photo {
+  width: min(1480px, 100%);
+  margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(8, 119, 201, 0.12);
@@ -248,7 +252,7 @@ a {
 
 .media-feature-photo img {
   width: 100%;
-  height: clamp(260px, 42vw, 520px);
+  height: clamp(360px, 42vw, 620px);
   display: block;
   object-fit: cover;
   object-position: center;
@@ -256,9 +260,11 @@ a {
 
 .media-main {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
-  gap: 42px;
-  padding: 46px 0;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.46fr);
+  gap: clamp(38px, 5vw, 76px);
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 56px 0;
 }
 
 .media-sections,
@@ -468,20 +474,24 @@ a {
 }
 
 .event-page {
-  padding: 0 48px 48px;
+  padding: 0 clamp(24px, 5vw, 84px) 62px;
 }
 
 .top {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr);
-  gap: 42px;
-  align-items: center;
-  padding: 52px 0 30px;
+  grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1fr);
+  gap: clamp(44px, 6vw, 96px);
+  align-items: start;
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 68px 0 38px;
 }
 
 .brand {
   display: grid;
   gap: 20px;
+  min-width: 0;
+  padding-right: 10px;
 }
 
 .brand-logo-image {
@@ -491,6 +501,13 @@ a {
 
 .hero-title {
   max-width: 820px;
+}
+
+.event-page .hero-title {
+  max-width: 760px;
+  font-size: 4.35rem;
+  hyphens: auto;
+  overflow-wrap: normal;
 }
 
 .period-pill {
@@ -513,7 +530,7 @@ a {
 
 .event-side {
   position: relative;
-  min-height: 370px;
+  min-height: 460px;
 }
 
 .badge-circle {
@@ -538,7 +555,7 @@ a {
 
 .badge-photo img {
   width: 100%;
-  height: clamp(320px, 40vw, 490px);
+  height: clamp(420px, 40vw, 590px);
   display: block;
   object-fit: cover;
   object-position: center;
@@ -547,10 +564,12 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(280px, 1.12fr);
-  gap: 30px;
+  grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.18fr);
+  gap: clamp(28px, 4vw, 58px);
   align-items: stretch;
-  padding: 22px 0 38px;
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 28px 0 46px;
 }
 
 .hero-copy {
@@ -587,7 +606,9 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
-  padding: 4px 0 34px;
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 4px 0 40px;
 }
 
 .card {
@@ -628,7 +649,9 @@ a {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
-  padding: 6px 0 36px;
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 8px 0 42px;
 }
 
 .feature {
@@ -692,8 +715,11 @@ a {
 }
 
 .footer {
+  width: min(1480px, 100%);
+  margin-right: auto;
+  margin-left: auto;
   padding: 26px 0 0;
-  margin-top: 28px;
+  margin-top: 34px;
 }
 
 .footer p {
@@ -701,19 +727,22 @@ a {
 }
 
 .summer-job-page {
-  max-width: min(1180px, calc(100% - 32px));
+  width: 100%;
+  max-width: none;
 }
 
 .poster {
-  padding: 0 48px 48px;
+  padding: 0 clamp(24px, 5vw, 84px) 62px;
 }
 
 .poster-hero {
   display: grid;
-  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr) minmax(280px, 0.82fr);
-  gap: 30px;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 0.96fr) minmax(420px, 1fr);
+  gap: clamp(28px, 4vw, 60px);
   align-items: center;
-  padding: 48px 0 42px;
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 62px 0 48px;
 }
 
 .poster-logo-image {
@@ -796,6 +825,8 @@ a {
 }
 
 .job-contents {
+  width: min(1480px, 100%);
+  margin: 0 auto;
   padding: 34px 0;
   border-top: 1px solid var(--line);
 }
@@ -832,6 +863,8 @@ a {
   gap: 18px;
   align-items: center;
   padding: 24px;
+  width: min(1480px, 100%);
+  margin: 0 auto;
   color: var(--blue-dark);
   background: var(--blue-soft);
   border-left: 8px solid var(--blue);
@@ -861,6 +894,8 @@ a {
 
 .poster-cards {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(1480px, 100%);
+  margin: 0 auto;
   padding: 34px 0;
 }
 
@@ -905,6 +940,8 @@ a {
   grid-template-columns: minmax(0, 1fr) 220px minmax(0, 1fr);
   gap: 22px;
   align-items: stretch;
+  width: min(1480px, 100%);
+  margin: 0 auto;
   padding-bottom: 34px;
 }
 
@@ -942,6 +979,8 @@ a {
 
 .poster-footer {
   padding-bottom: 0;
+  width: min(1480px, 100%);
+  margin: 0 auto;
 }
 
 .poster-footer p {
@@ -953,6 +992,11 @@ a {
   .media-copy h1,
   .hero-title {
     font-size: 4rem;
+  }
+
+  .event-page .hero-title {
+    max-width: 760px;
+    font-size: 3.7rem;
   }
 
   .poster-intro h2 {
@@ -983,16 +1027,24 @@ a {
 
   .media-hero,
   .media-main,
-  .top,
   .hero,
   .poster-hero,
   .poster-bottom {
     grid-template-columns: 1fr;
   }
 
+  .top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
   .media-brand,
   .event-side {
     min-height: auto;
+  }
+
+  .badge-photo img {
+    height: 420px;
   }
 
   .media-main {
@@ -1038,8 +1090,8 @@ a {
   }
 
   .page {
-    width: min(100% - 20px, 1180px);
-    padding: 20px 0 34px;
+    width: 100%;
+    padding: 0;
   }
 
   .media-release,
@@ -1059,6 +1111,10 @@ a {
   .hero-title,
   .poster-intro h2 {
     font-size: 2.55rem;
+  }
+
+  .event-page .hero-title {
+    font-size: 2.45rem;
   }
 
   .media-copy h2,
@@ -1081,6 +1137,7 @@ a {
   }
 
   .media-feature-photo img,
+  .badge-photo img,
   .poster-photo-wrap img {
     height: 300px;
   }
@@ -1137,3 +1194,5 @@ a {
     justify-self: start;
   }
 }
+  width: min(1480px, 100%);
+  margin: 0 auto;
