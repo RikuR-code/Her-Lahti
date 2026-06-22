@@ -1032,6 +1032,19 @@ a {
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: 0 10px 24px rgba(18, 36, 28, 0.06);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.partner-logo:hover,
+.partner-logo:focus-visible {
+  border-color: rgba(8, 119, 201, 0.38);
+  box-shadow: 0 14px 30px rgba(8, 119, 201, 0.12);
+  transform: translateY(-2px);
+}
+
+.partner-logo:focus-visible {
+  outline: 3px solid rgba(247, 198, 35, 0.8);
+  outline-offset: 3px;
 }
 
 .partner-logo img {
