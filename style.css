@@ -228,9 +228,9 @@ a {
   background-color: var(--blue-soft);
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
-    url("images/heraa2.webp");
-  background-position: center 38%;
-  background-size: auto 96%;
+    url("images/ryhma2.webp");
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
   border-radius: 8px;
   overflow: hidden;
@@ -1203,8 +1203,8 @@ a {
 
   .media-brand {
     min-height: 260px;
-    background-position: center 34%;
-    background-size: auto 92%;
+    background-position: center;
+    background-size: cover;
   }
 
   .media-feature-photo img,
