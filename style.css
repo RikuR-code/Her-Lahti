@@ -367,6 +367,10 @@ a {
   box-shadow: 0 16px 36px rgba(15, 114, 47, 0.12);
 }
 
+.papat-photo {
+  object-position: 38% center;
+}
+
 .media-brief,
 .media-slogan,
 .card,

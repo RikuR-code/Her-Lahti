@@ -24,7 +24,7 @@
 
   <link rel="canonical" href="https://heraalahti.fi/">
   <link rel="alternate" hreflang="fi" href="https://heraalahti.fi/">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260709-1">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -96,7 +96,6 @@
       <div class="nav-links">
         <a class="nav-link active" href="#etusivu" data-tab-link="etusivu" aria-current="page">Etusivu</a>
         <a class="nav-link" href="#tapahtuma" data-tab-link="tapahtuma">Tapahtuma</a>
-        <a class="nav-link" href="#kesatyo" data-tab-link="kesatyo">Kesätyöt</a>
       </div>
     </nav>
   </header>
@@ -117,7 +116,7 @@
       </section>
 
       <figure class="media-feature-photo">
-        <img src="images/teltta.webp" alt="Herää Lahti -teltta torilla">
+        <img src="images/jumppa.webp" alt="Herää Lahti -jumppahetki torilla">
       </figure>
 
       <section class="media-main">
@@ -161,7 +160,7 @@
         </div>
 
         <aside class="media-visuals">
-          <img class="media-photo" src="images/papat.webp" alt="Herää Lahti -osallistujat torilla">
+          <img class="media-photo papat-photo" src="images/papat.webp" alt="Herää Lahti -osallistujat torilla">
 
           <div class="media-brief">
             <h3>Lyhyesti</h3>
@@ -410,6 +409,9 @@
         <a class="partner-logo" href="https://cafekapris.fi/" target="_blank" rel="noopener">
           <img src="images/kapris-logo.jpg" alt="Kapris">
         </a>
+        <a class="partner-logo" href="https://lahiapteekkisyke.fi/" target="_blank" rel="noopener">
+          <img src="images/apteekki.webp" alt="Apteekki">
+        </a>
         <span class="partner-logo">
           <img src="images/etelainen.png" alt="Eteläisen alueen kumppanuuspöytä">
         </span>
@@ -426,16 +428,19 @@
   <script>
     const tabLinks = document.querySelectorAll("[data-tab-link]");
     const panels = document.querySelectorAll("[data-tab-panel]");
+    const publicTabs = new Set(Array.from(tabLinks, (link) => link.dataset.tabLink));
 
     function showTab(tabId) {
+      const targetTabId = publicTabs.has(tabId) ? tabId : "etusivu";
+
       panels.forEach((panel) => {
-        const isActive = panel.id === tabId;
+        const isActive = panel.id === targetTabId;
         panel.hidden = !isActive;
         panel.classList.toggle("active", isActive);
       });
 
       tabLinks.forEach((link) => {
-        const isActive = link.dataset.tabLink === tabId;
+        const isActive = link.dataset.tabLink === targetTabId;
         link.classList.toggle("active", isActive);
 
         if (link.classList.contains("nav-link")) {
@@ -447,7 +452,7 @@
         }
       });
 
-      history.replaceState(null, "", `#${tabId}`);
+      history.replaceState(null, "", `#${targetTabId}`);
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     }
 
